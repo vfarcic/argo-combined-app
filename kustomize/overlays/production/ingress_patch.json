@@ -2,7 +2,7 @@
   {
     "op": "replace",
     "path": "/spec/rules/0/host",
-    "value": "argo-combined-app.20.72.166.144.xip.io"
+    "value": "argo-combined-app.20.62.231.31.xip.io"
   }
 ]
 
