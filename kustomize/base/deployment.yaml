@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: argo-combined-demo
+  name: argo-combined-app
   labels:
-    app: argo-combined-demo
+    app: argo-combined-app
 spec:
   selector:
     matchLabels:
-      app: argo-combined-demo
+      app: argo-combined-app
   template:
     metadata:
       labels:
-        app: argo-combined-demo
+        app: argo-combined-app
     spec:
       containers:
-      - name: argo-combined-demo
+      - name: argo-combined-app
         image: vfarcic/argo-combined-app
         ports:
         - containerPort: 80
