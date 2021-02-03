@@ -1,0 +1,42 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: argo-combined-app
+  labels:
+    app: argo-combined-app
+spec:
+  gateways:
+  - argo-combined-app
+  hosts:
+  - argo-combined-app.local
+  - acme.com
+  http:
+  - name: primary
+    route:
+    - destination:
+        host: argo-combined-app
+        port:
+          number: 80
+      weight: 100
+    - destination:
+        host: argo-combined-app-canary
+        port:
+          number: 80
+      weight: 0
+
+---
+
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: argo-combined-app
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+     - "*"
