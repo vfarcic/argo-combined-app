@@ -88,13 +88,13 @@ spec:
           sum(irate(
             istio_requests_total{  
               reporter="source",
-              destination_service=~"{{ "{{args.service-name}}" }}",
+              destination_service=~"{{args.service-name}}",
               response_code=~"2.*"
             }[2m]
           )) / sum(irate(
             istio_requests_total{
               reporter="source",
-              destination_service=~"{{ "{{args.service-name}}" }}"
+              destination_service=~"{{args.service-name}}"
             }[2m]
           ))
   - name: avg-req-duration
@@ -109,12 +109,12 @@ spec:
           sum(irate(
             istio_request_duration_milliseconds_sum{
               reporter="source",
-              destination_service=~"{{ "{{args.service-name}}" }}"
+              destination_service=~"{{args.service-name}}"
             }[2m]
           )) / sum(irate(
             istio_request_duration_milliseconds_count{
               reporter="source",
-              destination_service=~"{{ "{{args.service-name}}" }}"
+              destination_service=~"{{args.service-name}}"
             }[2m]
           ))
       
