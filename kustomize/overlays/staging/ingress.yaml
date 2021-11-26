@@ -1,24 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: argo-combined-app
+  name: argo-alb
   annotations:
-    # ingress.kubernetes.io/ssl-redirect: "false"
-    # nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    # ingress.kubernetes.io/rewrite-target: /
-    # nginx.ingress.kubernetes.io/rewrite-target: /
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/tags: Stage=staging,Name=poc
+      kubernetes.io/ingress.class: alb
+      alb.ingress.kubernetes.io/scheme: internet-facing
 spec:
   rules:
   - http:
       paths:
-      - path: /
-        pathType: ImplementationSpecific
+      - pathType: Prefix
+        path: /argo/
         backend:
           service:
            name: argo-combined-app
            port:
              number: 80
-    host: staging.argo-combined-app.9d6ef6c8-default-ingresste-bd28-1438770634.ap-east-1.elb.amazonaws.com
