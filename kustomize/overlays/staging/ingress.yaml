@@ -13,6 +13,6 @@ spec:
         path: /argo/
         backend:
           service:
-           name: argo-combined-app
+           name: argo-combined-app-public
            port:
              number: 80
