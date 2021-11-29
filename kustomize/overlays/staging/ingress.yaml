@@ -10,7 +10,7 @@ spec:
   - http:
       paths:
       - pathType: Prefix
-        path: /argo/
+        path: /argo/*
         backend:
           service:
            name: argo-combined-app-public
