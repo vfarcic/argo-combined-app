@@ -3,14 +3,17 @@ kind: Ingress
 metadata:
   name: argo-alb
   annotations:
+      #This annotation is needed to use appropriate controller
       kubernetes.io/ingress.class: alb
+      #This annotation is needed to assign to one ALB
+      alb.ingress.kubernetes.io/group.name: staging.ingress-group
       alb.ingress.kubernetes.io/scheme: internet-facing
 spec:
   rules:
   - http:
       paths:
       - pathType: Prefix
-        path: /argo/*
+        path: /argo
         backend:
           service:
            name: argo-combined-app-public
