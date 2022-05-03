@@ -8,7 +8,6 @@ metadata:
     ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: nginx
   rules:
   - http:
       paths:
@@ -19,4 +18,4 @@ spec:
            name: argo-combined-app
            port:
              number: 80
-    host: staging.argo-combined-app.212.2.245.35.nip.io
+    host: staging.argo-combined-app.212.2.242.174.nip.io
