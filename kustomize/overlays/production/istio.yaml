@@ -9,7 +9,7 @@ spec:
   - argo-combined-app
   hosts:
   - argo-combined-app.local
-  - argo-combined-app.212.2.244.102.nip.io
+  - acme.com
   http:
   - name: primary
     route:
