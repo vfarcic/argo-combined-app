@@ -5,4 +5,6 @@ resources:
 - deployment.yaml
 - ingress.yaml
 namespace: staging
-
+images:
+  - name: vfarcic/argo-combined-app
+    newTag: "placeholder"
