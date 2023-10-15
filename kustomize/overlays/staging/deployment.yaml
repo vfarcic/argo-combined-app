@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: argo-combined-app
-        image: vfarcic/argo-combined-app
+        image: jeanpsampaio/argo-combined-app
         ports:
         - containerPort: 80
         livenessProbe:

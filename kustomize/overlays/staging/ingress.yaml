@@ -19,4 +19,4 @@ spec:
            name: argo-combined-app
            port:
              number: 80
-    host: staging.argo-combined-app.52.249.240.246.xip.io
+    host: staging.argo-combined-app.127.0.0.1.nip.io
